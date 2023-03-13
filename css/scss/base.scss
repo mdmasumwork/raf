@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.align_full {
+  width: 100vw;
+  position: relative;
+  margin-left: -50vw;
+  left: 50%;
+}
+
+.raf-button {
+  border: 0;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 128px;
+
+  &.raf-button-primary-1 {
+    background-color: $primary_1;
+    color: #000;
+
+    &:hover, &:active {
+      color: $secondary_4;
+    }
+  }
+
+  &.raf-button-primary-4 {
+    background-color: $primary_4;
+    color: #ffffff;
+  }
+
+  &.raf-button-secondary-1 {
+    background-color: $secondary_1;
+    color: #000;
+  }
+
+  &.raf-button-secondary-4 {
+    background-color: $secondary_4;
+    color: #ffffff;
+  }
+
+  &.raf-button-tertiary-1 {
+    background-color: $tertiary_1;
+    color: #000;
+  }
+
+  &.raf-button-tertiary-4 {
+    background-color: $tertiary_4;
+    color: #ffffff;
+  }
+}

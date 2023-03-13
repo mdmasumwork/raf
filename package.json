@@ -1,0 +1,16 @@
+{
+  "name": "roadside-car-fix",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass-dev": "sass --watch --update --style=expanded css/scss/main.scss:css/build/main.css css/scss/blocks:css/build/blocks",
+    "sass-prod": "sass --no-source-map --style=compressed css/scss/main.scss:css/build/main.css"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
+}
