@@ -26,6 +26,21 @@ class Blocks
                     'align' => false
                 ]
             ]);
+    
+            acf_register_block_type([
+                'name' => 'category-display',
+                'title' => 'Category display',
+                'description' => 'Category display block for showing the categories in any page',
+                'render_template' => 'template-parts/blocks/category-display.php',
+                'enqueue_style' => get_template_directory_uri() . '/css/build/blocks/category-display.css',
+                'category' => 'roadside-auto-fix',
+                'icon' => 'admin-page',
+                'keywords' => ['category display'],
+                'align' => 'full',
+                'supports' => [
+                    'align' => false
+                ]
+            ]);
         }
     }
 }
