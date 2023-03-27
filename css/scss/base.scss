@@ -4,6 +4,12 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+p {
+  word-spacing: 3px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
 .align_full {
   width: 100vw;
   position: relative;
@@ -14,41 +20,120 @@ body {
 .raf-button {
   border: 0;
   padding: 12px 20px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   min-width: 128px;
+  letter-spacing: 2px;
 
-  &.raf-button-primary-1 {
-    background-color: $primary_1;
-    color: #000;
+  &:hover, &:active {
+    cursor: pointer;
+  }
 
-    &:hover, &:active {
-      color: $secondary_4;
+  &-rounded {
+    border-radius: 5px;
+  }
+
+  &.raf-button {
+    &-primary {
+      &-solid {
+        background-color: $primary_3;
+        color: #FFFFFF;
+        border-bottom: 4px solid $primary_4;
+
+        &:hover, &:active {
+          background-color: $primary_4;
+        }
+      }
+
+      &-border {
+        background-color: transparent;
+        border: 3px solid $primary_4;
+        color: $primary-4;
+
+        &:hover, &:active {
+          background-color: $primary_4;
+          color: #FFFFFF;
+        }
+      }
+
+      &-text {
+        background-color: transparent;
+        border-bottom: 3px solid $secondary_4;
+        color: $primary-4;
+        padding: 8px 0;
+
+        &:hover, &:active {
+          border-bottom: 3px solid $tertiary_4;
+        }
+      }
     }
-  }
 
-  &.raf-button-primary-4 {
-    background-color: $primary_4;
-    color: #ffffff;
-  }
+    &-secondary {
+      &-solid {
+        background-color: $secondary_3;
+        color: $tertiary_4;
+        border-bottom: 4px solid $secondary_4;
 
-  &.raf-button-secondary-1 {
-    background-color: $secondary_1;
-    color: #000;
-  }
+        &:hover, &:active {
+          background-color: $secondary_4;
+        }
+      }
 
-  &.raf-button-secondary-4 {
-    background-color: $secondary_4;
-    color: #ffffff;
-  }
+      &-border {
+        background-color: transparent;
+        border: 3px solid $secondary_4;
+        color: $secondary-4;
 
-  &.raf-button-tertiary-1 {
-    background-color: $tertiary_1;
-    color: #000;
-  }
+        &:hover, &:active {
+          background-color: $secondary_4;
+          color: #FFFFFF;
+        }
+      }
 
-  &.raf-button-tertiary-4 {
-    background-color: $tertiary_4;
-    color: #ffffff;
+      &-text {
+        background-color: transparent;
+        border-bottom: 3px solid $tertiary_4;
+        color: $secondary-4;
+        padding: 8px 0;
+
+        &:hover, &:active {
+          border-bottom: 3px solid $primary_4;
+        }
+      }
+    }
+
+    &-tertiary {
+      &-solid {
+        background-color: $tertiary_3;
+        color: #FFFFFF;
+        border-bottom: 4px solid $tertiary_4;
+
+        &:hover, &:active {
+          background-color: $tertiary_4;
+        }
+      }
+
+      &-border {
+        background-color: transparent;
+        border: 3px solid $tertiary_4;
+        color: $tertiary-4;
+
+        &:hover, &:active {
+          background-color: $tertiary_4;
+          color: #FFFFFF;
+        }
+      }
+
+      &-text {
+        background-color: transparent;
+        border-bottom: 3px solid $primary_4;
+        color: $tertiary-4;
+        padding: 8px 0;
+
+        &:hover, &:active {
+          border-bottom: 3px solid $secondary_4;
+        }
+      }
+    }
   }
 }

@@ -46,7 +46,7 @@ $description = get_field('description');
                 </select>
             </div>
             <div class="search-button">
-                <button class="raf-button raf-button-primary-1">Search</button>
+                <button class="raf-button raf-button-secondary-solid">Search</button>
             </div>
         </div>
     </div>

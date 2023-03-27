@@ -3,6 +3,12 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+p {
+  word-spacing: 3px;
+  font-size: 18px;
+  line-height: 28px;
+}
+
 .align_full {
   width: 100vw;
   position: relative;
@@ -13,36 +19,94 @@ body {
 .raf-button {
   border: 0;
   padding: 12px 20px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
   min-width: 128px;
+  letter-spacing: 2px;
 }
-.raf-button.raf-button-primary-1 {
-  background-color: #C6CBD2;
-  color: #000;
+.raf-button:hover, .raf-button:active {
+  cursor: pointer;
 }
-.raf-button.raf-button-primary-1:hover, .raf-button.raf-button-primary-1:active {
-  color: #EE4700;
+.raf-button-rounded {
+  border-radius: 5px;
 }
-.raf-button.raf-button-primary-4 {
+.raf-button.raf-button-primary-solid {
+  background-color: #556578;
+  color: #FFFFFF;
+  border-bottom: 4px solid #1c314B;
+}
+.raf-button.raf-button-primary-solid:hover, .raf-button.raf-button-primary-solid:active {
   background-color: #1c314B;
-  color: #ffffff;
 }
-.raf-button.raf-button-secondary-1 {
-  background-color: #FDEBE4;
-  color: #000;
+.raf-button.raf-button-primary-border {
+  background-color: transparent;
+  border: 3px solid #1c314B;
+  color: #1c314B;
 }
-.raf-button.raf-button-secondary-4 {
-  background-color: #EE4700;
-  color: #ffffff;
+.raf-button.raf-button-primary-border:hover, .raf-button.raf-button-primary-border:active {
+  background-color: #1c314B;
+  color: #FFFFFF;
 }
-.raf-button.raf-button-tertiary-1 {
-  background-color: #D2C6D2;
-  color: #000;
+.raf-button.raf-button-primary-text {
+  background-color: transparent;
+  border-bottom: 3px solid #FF8626;
+  color: #1c314B;
+  padding: 8px 0;
 }
-.raf-button.raf-button-tertiary-4 {
+.raf-button.raf-button-primary-text:hover, .raf-button.raf-button-primary-text:active {
+  border-bottom: 3px solid #4B1C49;
+}
+.raf-button.raf-button-secondary-solid {
+  background-color: #FFAC67;
+  color: #4B1C49;
+  border-bottom: 4px solid #FF8626;
+}
+.raf-button.raf-button-secondary-solid:hover, .raf-button.raf-button-secondary-solid:active {
+  background-color: #FF8626;
+}
+.raf-button.raf-button-secondary-border {
+  background-color: transparent;
+  border: 3px solid #FF8626;
+  color: #FF8626;
+}
+.raf-button.raf-button-secondary-border:hover, .raf-button.raf-button-secondary-border:active {
+  background-color: #FF8626;
+  color: #FFFFFF;
+}
+.raf-button.raf-button-secondary-text {
+  background-color: transparent;
+  border-bottom: 3px solid #4B1C49;
+  color: #FF8626;
+  padding: 8px 0;
+}
+.raf-button.raf-button-secondary-text:hover, .raf-button.raf-button-secondary-text:active {
+  border-bottom: 3px solid #1c314B;
+}
+.raf-button.raf-button-tertiary-solid {
+  background-color: #6E376B;
+  color: #FFFFFF;
+  border-bottom: 4px solid #4B1C49;
+}
+.raf-button.raf-button-tertiary-solid:hover, .raf-button.raf-button-tertiary-solid:active {
   background-color: #4B1C49;
-  color: #ffffff;
+}
+.raf-button.raf-button-tertiary-border {
+  background-color: transparent;
+  border: 3px solid #4B1C49;
+  color: #4B1C49;
+}
+.raf-button.raf-button-tertiary-border:hover, .raf-button.raf-button-tertiary-border:active {
+  background-color: #4B1C49;
+  color: #FFFFFF;
+}
+.raf-button.raf-button-tertiary-text {
+  background-color: transparent;
+  border-bottom: 3px solid #1c314B;
+  color: #4B1C49;
+  padding: 8px 0;
+}
+.raf-button.raf-button-tertiary-text:hover, .raf-button.raf-button-tertiary-text:active {
+  border-bottom: 3px solid #FF8626;
 }
 
 header {
@@ -98,10 +162,10 @@ header .site-header-conditional .menu .menu-item a {
   font-size: 16px;
 }
 header .site-header-conditional .menu .menu-item a:hover {
-  color: #EE4700;
+  color: #FF8626;
 }
 header .site-header-conditional .menu .menu-item a:active {
-  color: #EE4700;
+  color: #FF8626;
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -129,7 +193,7 @@ header .site-header-conditional .menu .menu-item a:active {
     color: #1c314B;
   }
   header .site-header-absolute .main-navigation .menu-primary-menu-container .menu .menu-item a:hover {
-    color: #EE4700;
+    color: #FF8626;
   }
   header .site-header-absolute .main-navigation button.burger-menu {
     display: none;
