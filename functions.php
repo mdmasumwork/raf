@@ -165,6 +165,7 @@ use raf\AutoLoader;
 use raf\Blocks;
 use raf\View;
 use raf\LoadScripts;
+use raf\Settings;
 
 require get_stylesheet_directory() . '/app/AutoLoader.php';
 $loader = new AutoLoader();
@@ -173,5 +174,6 @@ $loader->addNamespace('raf', get_stylesheet_directory() . '/app');
 
 View::$view_dir = get_stylesheet_directory() . '/template-parts';
 
-Blocks::boot();
+Settings::boot();
 LoadScripts::boot();
+Blocks::boot();

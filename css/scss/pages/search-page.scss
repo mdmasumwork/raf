@@ -1,0 +1,47 @@
+.search-results {
+  .site-main {
+    background-color: #F5F5F5;
+  }
+
+  .page-body {
+    max-width: 1200px;
+    margin: 48px auto;
+    display: flex;
+
+    .filter-area {
+      min-width: 320px;
+      background-color: #FFFFFF;
+    }
+
+    .content-area {
+      .card {
+        display: flex;
+        background-color: #FFFFFF;
+        padding: 16px;
+        margin-bottom: 32px;
+        margin-left: 32px;
+
+        .post-thumbnail {
+          img {
+            width: 256px;
+            height: 256px;
+            object-fit: cover;
+          }
+        }
+
+        &-content {
+          margin-left: 16px;
+
+          h2 {
+            margin-top: 0;
+            font-size: 20px;
+          }
+
+          p {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}

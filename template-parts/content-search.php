@@ -9,27 +9,11 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php
-			roadside_auto_fix_posted_on();
-			roadside_auto_fix_posted_by();
-			?>
-		</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php roadside_auto_fix_post_thumbnail(); ?>
-
-	<div class="entry-summary">
-		<?php the_excerpt(); ?>
-	</div><!-- .entry-summary -->
-
-	<footer class="entry-footer">
-		<?php roadside_auto_fix_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
+<article id="post-<?php the_ID(); ?>" <?php post_class('card'); ?>>
+    <?php roadside_auto_fix_post_thumbnail(); ?>
+    <div class="card-content">
+        <h2><?= the_title() ?></h2>
+        <p><?= the_excerpt() ?></p>
+        <h3>$<?= get_field('price') ?></h3>
+    </div>
 </article><!-- #post-<?php the_ID(); ?> -->
