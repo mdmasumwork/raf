@@ -10,6 +10,16 @@ p {
   line-height: 28px;
 }
 
+a {
+  color: $secondary_4;
+  text-underline-offset: 6px;
+  font-weight: bold;
+
+  &:hover {
+    color: $tertiary_2;
+  }
+}
+
 .align_full {
   width: 100vw;
   position: relative;

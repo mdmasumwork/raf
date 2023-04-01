@@ -9,6 +9,15 @@ p {
   line-height: 28px;
 }
 
+a {
+  color: #FF8626;
+  text-underline-offset: 6px;
+  font-weight: bold;
+}
+a:hover {
+  color: #A58EA4;
+}
+
 .align_full {
   width: 100vw;
   position: relative;
@@ -276,9 +285,11 @@ header .site-header-conditional .menu .menu-item a:active {
 .search-results .page-body .content-area .card {
   display: flex;
   background-color: #FFFFFF;
-  padding: 16px;
+  padding: 20px;
   margin-bottom: 32px;
   margin-left: 32px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 8px #dedede;
 }
 .search-results .page-body .content-area .card .post-thumbnail img {
   width: 256px;
@@ -286,14 +297,26 @@ header .site-header-conditional .menu .menu-item a:active {
   object-fit: cover;
 }
 .search-results .page-body .content-area .card-content {
-  margin-left: 16px;
+  margin-left: 20px;
 }
 .search-results .page-body .content-area .card-content h2 {
   margin-top: 0;
   font-size: 20px;
 }
+.search-results .page-body .content-area .card-content h2 a {
+  text-decoration: none;
+  color: #000000;
+  padding-left: 0;
+}
+.search-results .page-body .content-area .card-content h2 a:hover {
+  color: #6E376B;
+}
 .search-results .page-body .content-area .card-content p {
   font-size: 16px;
+  color: #1c314B;
+}
+.search-results .page-body .content-area .card-content a {
+  padding-left: 12px;
 }
 
 /*# sourceMappingURL=main.css.map */
