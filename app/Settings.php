@@ -11,6 +11,14 @@ class Settings
         add_filter('ajax_query_attachments_args', [get_called_class(), 'wpb_show_current_user_attachments']);
         add_filter('excerpt_length', [get_called_class(), 'raf_custom_excerpt_length'], 999);
         add_filter('excerpt_more', [get_called_class(), 'custom_excerpt_more'], 21);
+        add_filter('manage_service_posts_columns', [get_called_class(), 'set_custom_service_columns']);
+        add_filter('query_vars', [get_called_class(), 'rafRegisterQueryVars']);
+    }
+    
+    public static function set_custom_service_columns($columns) {
+        $columns['author'] = "Author";
+        
+        return $columns;
     }
     
     public static function custom_excerpt_more($more) {
@@ -25,20 +33,6 @@ class Settings
     public static function initForSettings()
     {
         add_role( 'shop', 'Shop', get_role( 'author' )->capabilities );
-    
-        register_post_type( 'service',
-            // CPT Options
-            array(
-                'labels' => array(
-                    'name' => 'Services',
-                    'singular_name' => 'Service'
-                ),
-                'supports' => array('title', 'editor', 'thumbnail', 'comments'),
-                'public' => true,
-                'has_archive' => true,
-                'rewrite' => array('slug' => 'services')
-            )
-        );
     }
     
     public static function posts_for_current_author($query)
@@ -52,7 +46,6 @@ class Settings
             global $user_ID;
             $query->set('author', $user_ID );
         }
-        return $query;
     }
     
     public static function wpb_show_current_user_attachments($query)
@@ -62,5 +55,11 @@ class Settings
             $query['author'] = $user_id;
         }
         return $query;
+    }
+    
+    public static function rafRegisterQueryVars($vars) {
+        $vars[] = 'city';
+        $vars[] = 'state';
+        return $vars;
     }
 }

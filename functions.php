@@ -162,10 +162,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 use raf\AutoLoader;
-use raf\Blocks;
 use raf\View;
-use raf\LoadScripts;
-use raf\Settings;
 
 require get_stylesheet_directory() . '/app/AutoLoader.php';
 $loader = new AutoLoader();
@@ -174,6 +171,8 @@ $loader->addNamespace('raf', get_stylesheet_directory() . '/app');
 
 View::$view_dir = get_stylesheet_directory() . '/template-parts';
 
-Settings::boot();
-LoadScripts::boot();
-Blocks::boot();
+\raf\Settings::boot();
+\raf\LoadScripts::boot();
+\raf\Blocks::boot();
+\raf\posts\Service::boot();
+\raf\CustomQuery::boot();
