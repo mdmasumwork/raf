@@ -15,6 +15,7 @@ class LoadScripts
         wp_style_add_data( 'roadside-auto-fix-style', 'rtl', 'replace' );
         
         wp_enqueue_script( 'roadside-auto-fix-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), _S_VERSION, true );
+        wp_enqueue_script( 'roadside-auto-fix-search-bar', get_template_directory_uri() . '/js/search-bar.js', array('jquery'), _S_VERSION, true );
     }
     
     public static function loadEditorScripts() {

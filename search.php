@@ -11,23 +11,29 @@ get_header();
 ?>
     <main id="primary" class="site-main align_full">
         <div class="search-bar-area">
-            <div class="search-bar-area-content">
-                <div class="state-select">
-                    <select>
-                        <option value="IA">Iowa</option>
-                        <option value="NY">New York</option>
-                        <option value="CA">California</option>
-                    </select>
-                </div>
-                <div class="city-select">
-                    <select>
-                        <option value="IA">Iowa</option>
-                        <option value="NY">New York</option>
-                        <option value="CA">California</option>
-                    </select>
-                </div>
-                <div class="search-button">
-                    <button class="raf-button raf-button-secondary-solid">Search</button>
+            <div class="filter-icon-area">
+                <h3>Filter</h3>
+                <div><span class="dashicons dashicons-filter" id="search-bar-filter-icon"></span></div>
+            </div>
+            <div class="search-bar-area-content-container">
+                <div class="search-bar-area-content">
+                    <div class="state-select">
+                        <select>
+                            <option value="IA">Iowa</option>
+                            <option value="NY">New York</option>
+                            <option value="CA">California</option>
+                        </select>
+                    </div>
+                    <div class="city-select">
+                        <select>
+                            <option value="IA">Iowa</option>
+                            <option value="NY">New York</option>
+                            <option value="CA">California</option>
+                        </select>
+                    </div>
+                    <div class="search-button">
+                        <button class="raf-button raf-button-secondary-solid">Search</button>
+                    </div>
                 </div>
             </div>
         </div>

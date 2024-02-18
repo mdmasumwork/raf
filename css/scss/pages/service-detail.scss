@@ -1,0 +1,51 @@
+.single-service {
+  color: $primary_4;
+
+  h1, h2, h3, h4 ,h5 {
+    color: #000000;
+  }
+
+  .site-main {
+    background-color: #F5F5F5;
+  }
+
+  .page-content-area {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 48px 16px;
+
+    .post-thumbnail img {
+      width: 100%;
+      height: auto;
+    }
+
+    .service-content-area {
+      margin-left: 16px;
+      margin-right: 16px;
+    }
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  .single-service {
+    .page-content-area {
+      flex-direction: row;
+      padding: 64px 16px;
+
+      .entry-title {
+        margin-top: 0;
+      }
+
+      .post-thumbnail img {
+        min-width: 500px;
+      }
+
+      .service-content-area {
+        margin-left: 36px;
+      }
+    }
+  }
+}

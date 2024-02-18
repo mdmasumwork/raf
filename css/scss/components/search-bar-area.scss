@@ -1,14 +1,30 @@
 .search-bar-area {
   background-color: $tertiary_4;
+  padding: 32px;
+
+  .filter-icon-area {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: #FFFFFF;
+
+    h3 {
+      margin: 0;
+    }
+  }
+
+  &-content-container {
+    display: none;
+    margin-top: 32px;
+  }
 
   &-content {
     max-width: 1200px;
     margin: auto;
     color: $primary_1;
-    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 32px 16px;
+    display: flex;
 
     .state-select, .city-select, .search-button {
       position: relative;
@@ -49,7 +65,22 @@
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
+}
+
+/* Extra large devices (large laptops and desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
   .search-bar-area {
+    padding: 32px 16px;
+
+    &-content-container {
+      display: block;
+      margin-top: 0;
+    }
+
+    .filter-icon-area {
+      display: none;
+    }
+
     &-content {
       flex-direction: row;
 
