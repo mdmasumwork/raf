@@ -1,0 +1,107 @@
+/**
+ * Retrieves the translation of text.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-i18n/
+ */
+import { __ } from '@wordpress/i18n';
+
+/**
+ * React hook that is used to mark the block wrapper element.
+ * It provides all the necessary props like the class name.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
+ */
+import { useBlockProps, RichText, MediaUpload, MediaUploadCheck, InnerBlocks } from '@wordpress/block-editor';
+import { Button, Modal } from '@wordpress/components';
+import { useState, useEffect } from '@wordpress/element';
+
+/**
+ * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
+ * Those files can contain any CSS code that gets applied to the editor.
+ *
+ * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
+ */
+import './editor.scss';
+
+/**
+ * The edit function describes the structure of your block in the context of the
+ * editor. This represents what the editor will render when the block is used.
+ *
+ * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#edit
+ *
+ * @return {Element} Element to render.
+ */
+export default function Edit({attributes, setAttributes}) {
+	const { name, designation, imageUrl, imageAlt, modalId } = attributes;
+	const [isOpen, setOpen] = useState(false);
+
+	if (!modalId) {
+		setAttributes({modalId: 'modal-' + new Date().getTime() + '-' + Math.random().toString(36).slice(2)})
+	}
+
+	const MY_TEMPLATE = [
+		['core/freeform'] // The Classic block
+	];
+
+	return (
+		<div { ...useBlockProps() }>
+			<div className="staff-card">
+				<MediaUploadCheck>
+					<MediaUpload
+						onSelect={(media) => setAttributes({ imageUrl: media.url, imageAlt: media.alt })}
+						allowedTypes={['image']}
+						value={imageUrl}
+						render={({ open }) => (
+							imageUrl ? (
+								<img src={imageUrl} alt={imageAlt} onClick={open} className="staff-card-staff-image" />
+							) : (
+								<div onClick={open} className="staff-card-staff-image-placeholder" style={{ cursor: 'pointer' }}></div>
+							)
+						)}
+					/>
+				</MediaUploadCheck>
+				<div className="staff-card-content" onClick={() => setOpen(true)}>
+					<h3 tagName="h3" className="staff-name">{name ? name: "Name"}</h3>
+					<p tagName="p" className="staff-designation" placeholder="Designation">{designation ? designation : "Designation"}</p>
+				</div>
+			</div>
+			{isOpen && (
+				<Modal
+					onRequestClose={() => setOpen(false)}
+				>
+					<div className="staff-modal">
+						<div className="staff-modal-content">
+							{imageUrl && (
+								<div className="staff-modal-staff-image">
+									<img src={imageUrl} alt={imageAlt}/>
+								</div>
+							)}
+							<div className="staff-modal-text">
+								<div className="staff-modal-staff-signature">
+									<RichText
+										tagName="h3"
+										className="staff-name"
+										value={name}
+										placeholder="Name"
+										onChange={(newName) => setAttributes({name: newName})}
+									/>
+									<RichText
+										tagName="p"
+										className="staff-designation"
+										value={designation}
+										placeholder="Designation"
+										onChange={(newDesignation) => setAttributes({designation: newDesignation})}
+									/>
+								</div>
+								<div className="staff-description">
+									<InnerBlocks template={MY_TEMPLATE} templateLock = "all"></InnerBlocks>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</Modal>
+				)}
+		</div>
+	);
+}

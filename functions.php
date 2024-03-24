@@ -176,3 +176,5 @@ View::$view_dir = get_stylesheet_directory() . '/template-parts';
 \raf\Blocks::boot();
 \raf\posts\Service::boot();
 \raf\CustomQuery::boot();
+
+require get_stylesheet_directory() . '/app/blocks/staff-card/staff-card.php';
